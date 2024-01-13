@@ -88,5 +88,6 @@ Use Case Diagrams
 ![image](https://github.com/Rthuin/MSBATE/assets/74817034/73666442-41f1-4b0d-9c7a-78a4203dc30e)
 
 Activity Diagram 
+
 ![image](https://github.com/Rthuin/MSBATE/assets/74817034/d8fa5a9f-45a8-4575-9839-785fe3181d11)
 
