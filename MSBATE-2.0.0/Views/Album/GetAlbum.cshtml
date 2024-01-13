@@ -1,0 +1,50 @@
+﻿@using EntityLayer.Concrete
+@model List<Album>
+@{
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Store</title>
+    <link href="~/Templates/Music_main/style.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="main-head">
+
+        <nav class="main-nav">
+            <a href="/Home/Index"> Home</a>
+            <a href="/Album/Index"> Albums</a>
+            <a href="/Home/About"> About</a>
+            <br /> <br /><br /> <br />
+        </nav>
+        <h1>The Generics</h1>
+    </header>
+    <section class="content-section container">
+        <div class="shop-items">
+            @foreach (var album in Model)
+            {
+                <div class="shop-item">
+                    <div><span class="shop-item-title">@album.Title</span></div>
+                    <a href="/Song/ShowSongByAlbum/@album.AlbumId">
+                        <img class="shop-item-image" src="@album.AlbumCover" alt="@album.Title" srcset="">
+                    </a>
+                </div>
+            }
+        </div>
+    </section>
+    @* <footer class="main-footer">
+            <div class="container main-footer-container">
+                <h4>The Generics</h4>
+                <ul>
+                    <li><img src="./images/spotify.png" alt="" srcset=""></li>
+                    <li><img src="./images/yt.png" alt="" srcset=""></li>
+                </ul>
+            </div>
+        </footer> *@
+</body>
+</html>

@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+@model EntityLayer.Concrete.User
+
+@using (Html.BeginForm("DeleteUser", "User", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("User Name")
+        @Html.TextBoxFor(x => x.UserName)
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br /><br />
+
+        <!-- Parola ve parola onayı alanlarını silin -->
+        @Html.Label("Password")
+        @Html.TextBoxFor(x => x.Password, new { type = "password" })
+        @Html.ValidationMessageFor(x => x.Password)
+
+        <br /><br />
+
+        @Html.Label("Confirm Password")
+        @Html.TextBoxFor(x => x.Password, new { type = "password" })
+        @Html.ValidationMessageFor(x => x.Password)
+
+        <br /><br /> -->
+        <!-- Butonun metnini değiştirin -->
+        <button class="btn btn-primary" type="submit">Delete</button>
+        <br /><br />
+
+        <!-- Hata mesajını burada göster -->
+        <p>@ViewBag.ErrorMessage</p>
+    </div>
+}

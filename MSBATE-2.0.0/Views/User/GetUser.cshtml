@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+@using EntityLayer.Concrete
+@model List<User>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Email</th>
+        <th>Passwd</th>
+    </tr>
+    
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td> @i.UserId </td>
+                <td> @i.Email </td>
+                <td> @i.Password </td>
+            </tr>
+            
+        }
+
+   
+</table>    

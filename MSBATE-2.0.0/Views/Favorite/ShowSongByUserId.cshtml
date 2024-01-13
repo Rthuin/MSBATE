@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+
+@using EntityLayer.Concrete
+@model List<FavoriteSong>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Templates/Music_main/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header class="main-head">
+        <br />
+        <h1>The Generics</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+        <!-- <button class="btn">&#9658;</button> -->
+
+        <section class="content-section container">
+            <h2 class="">Playlist</h2>
+            <div>
+                @foreach (var item in Model)
+                {
+                    <div class="playlist-row">
+                        <span class=" playlist-item"> @item.Song.SongName</span>
+                        <span class=" playlist-item"> @item.</span>
+                        <span class=" playlist-arena"> @item.Song.Duration</span>
+                        <button class="btn-play" data-index="@item">&#9658;</button>
+
+                        <audio class="audio-player" id="audio-@item.Song.SongId" src="@Url.Content(item.Song.SongUrl)"></audio>
+
+                    </div>
+                }
+            </div>
+        </section>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </header>
+    <footer class="main-footer">
+        <div class="container main-footer-container">
+            <h4>MSBate</h4>
+            <ul>
+                <li><img class="social" src="/Templates/Music_main/images/spotify.png" alt="" srcset=""></li>
+                <li><img class="social" src="/Templates/Music_main/images/yt.png" alt="" srcset=""></li>
+            </ul>
+        </div>
+    </footer>
+    <br />
+    <script src="/Templates/Music_main/script.js"></script>
+</body>
+
+</html>

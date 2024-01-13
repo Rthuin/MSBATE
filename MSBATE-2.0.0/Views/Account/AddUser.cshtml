@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+
+@model EntityLayer.Concrete.User
+<!DOCTYPE html>
+
+<h1>SignUp page</h1>
+
+@using (Html.BeginForm("AddUser", "User", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("User Name")
+        @Html.TextBoxFor(x => x.UserName)
+        @Html.ValidationMessageFor(x => x.UserName)
+        <br /><br />
+
+        @Html.Label("Password")
+        @Html.TextBoxFor(x => x.Password, new { type = "password" })
+        @Html.ValidationMessageFor(x => x.Password)
+
+        <br /><br />
+
+        @Html.Label("Email")
+        @Html.TextBoxFor(x => x.Email, new { type = "email", placeholder = "example@mail.ru" })
+        @Html.ValidationMessageFor(x => x.Email)
+
+        <br /><br />
+
+        <button class="btn btn-primary" type="submit">Register</button>
+        <br /><br />
+
+        <!-- Hata mesajını burada göster -->
+        <p>@ViewBag.ErrorMessage</p>
+    </div>
+}

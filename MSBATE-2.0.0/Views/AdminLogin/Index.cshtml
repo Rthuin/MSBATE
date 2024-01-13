@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+@model EntityLayer.Concrete.Admin
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Streaming Platform</title>
+    <link rel="stylesheet" href="~/Templates/web/style.css" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <aside>
+        <div class="left-bar">
+            
+            <div class="your">
+                @if (Session["AdminUsername"] != null)
+                {   
+                    <div>
+                        <h2> Welcome, @Model.AdminUsername</h2>
+                    </div>
+                    
+                    
+                  
+                }
+                else
+                {
+                    <button class="btn" id="signIn">
+                        asdadasda
+                    </button>
+                }
+            </div>
+            <div class="your-library">
+
+                        
+                <ul>
+              
+                    <li><a href="/Templates/web/pages/favourite/fav.html">Fav Songs</a></li>
+                    <li><a href="/Templates/web/pages/playlist/playlist.html">Playlists</a></li>
+                    <li><a href="/Templates/web/pages/podcast/podcast.html">Podcasts</a></li>
+                    <li><a href="/Templates/web/pages/favArtist/favArtist.html">Fav Artists</a></li>
+                </ul>
+
+            </div>
+            <div class="navigation">
+                <!-- Navigation links go here -->
+            </div>
+        </div>
+    </aside>
+
+    <div class="container">
+        <div class="music-preferences">
+            <!-- Music preferences content goes here -->
+            Music Preferences
+        </div>
+        <div class="suggestions">
+            <!-- Suggestions content goes here -->
+            Suggestions
+        </div>
+        <div class="spotify-mixes">
+            <!-- Spotify mixes content goes here -->
+            spotify-mixes
+        </div>
+        <div class="recently-played">
+            <!-- Recently played content goes here -->
+            recently-played
+        </div>
+    </div>
+
+    <div class="song-controls">
+        <!-- Song progress bar, shuffle, pause, repeat, volume controls go here -->
+    </div>
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+</body>
+</html>
+
+
+

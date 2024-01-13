@@ -1,0 +1,57 @@
+﻿@{
+    Layout = null;
+}
+
+@model EntityLayer.Concrete.User
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Streaming Platform</title>
+    <link rel="stylesheet" href="~/Templates/web/style.css" />
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" />
+</head>
+<body>
+    <!-- Navigation -->
+    <aside>
+        <div class="left-bar"
+            <div class="your-library">
+                @if (Session["Email"] != null)
+                {
+                    <div>
+                        <h2> Welcome, @Model.UserName</h2>
+                    </div>
+                }
+                else
+                {
+                    <button class="btn" id="signIn">
+                        asdadasda
+                    </button>
+                }
+            </div>
+            
+        </div>
+    </aside>
+
+    <div class="container">
+        <div class="music-preferences">
+              <a href="/Favorite/ShowSongByUserId/@Model.UserId" class="signUpLink">Favorites =>></a>
+            
+        </div>
+        <div class="suggestions">
+            <a href="/Album/GetAlbum">All Albums</a>
+        </div>
+       
+    </div>
+
+    
+    <footer>
+        <!-- Footer content goes here -->
+    </footer>
+</body>
+</html>
+
+
+

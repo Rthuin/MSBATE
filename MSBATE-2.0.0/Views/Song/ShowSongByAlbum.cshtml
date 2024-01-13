@@ -1,0 +1,55 @@
+﻿@using EntityLayer.Concrete
+@model List<Song>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Templates/Music_main/style.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <header class="main-head">
+        <nav class="main-nav">
+            <a href="/Home/Index"> Home</a>
+            <a href="/Album/Index"> Albums</a>
+            <a href="/Home/About"> About</a>
+        </nav>
+        <h1>The Generics</h1>
+        <br><br>
+        <br />
+
+        <br />
+        <section class="content-section container">
+            <h2 class="">Playlist</h2>
+            <div>
+                @foreach (var song in Model)
+                {
+
+                    <div class="playlist-row">
+                        <span class=" playlist-item"> @song.SongName</span>
+                        <span class=" playlist-arena"> @song.Duration</span>
+                        <button class="btn-play" data-index="@song">&#9658;</button>
+
+                        <audio class="audio-player" id="audio-@song.SongId" src="@Url.Content(song.SongUrl)"></audio>
+
+                    </div>
+                }
+
+
+            </div>
+        </section>
+    </header>
+    <script src="/Templates/Music_main/script.js"></script>
+</body>
+</html>
